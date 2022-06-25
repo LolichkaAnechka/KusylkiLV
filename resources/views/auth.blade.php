@@ -16,9 +16,7 @@
             </ul>
         </div>
     @endif
-    <h2>
-        Авторизация
-    </h2>
+
 	<form action="auth/check" method="post">
         @csrf
 		<label>Username</label>

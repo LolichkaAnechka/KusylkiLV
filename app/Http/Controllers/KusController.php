@@ -54,12 +54,11 @@ class KusController extends Controller
         $comment = new Comment();
         $comment->post_id = $request->post_id;
         $comment->user_id = $request->user_id;
-        $comment->comment_text = $request->comment_text;
+        $comment->comment_text = strip_tags($request->comment_text);
 
         $comment->save();
 
         return redirect()->back();
-        // return view('post/'.$_POST['post']->post_name);
     }
 
     public function reg_check(Request $request)

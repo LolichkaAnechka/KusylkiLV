@@ -15,20 +15,24 @@ class Post extends Model
 
     public $timestamps = false;
 
-    public function scores(){
-        return $this->hasOne(Score::class);
-    }
+  
     public function comments(){
         return $this->hasMany(Comment::class);
     }
+
+
+
+    
     public function pick_hero_imgs(){
         return $this->hasMany(PickHeroImg::class);
     }
     public function ban_hero_imgs(){
         return $this->hasMany(BanHeroImg::class);
     }
-
     public function team_logos(){
         return $this->hasMany(TeamLogo::class);
+    }
+    public function scores(){
+        return $this->hasOne(Score::class);
     }
 }
